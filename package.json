@@ -1,0 +1,66 @@
+{
+  "name": "use-app-state",
+  "version": "1.0.0",
+  "description": "useAppState based on react hook. that global version of setState() built on Context",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kothing/use-app-state.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kothing/use-app-state/issues"
+  },
+  "homepage": "https://github.com/kothing/use-app-state",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm run clean && tsc",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "lint": "tslint 'src/**/*.ts'",
+    "prettier": "prettier --parser typescript --write '**/*.ts'",
+    "precommit": "lint-staged",
+    "postversion": "git push origin master --tags --no-verify",
+    "preversion": "npm run unit && npm run build"
+  },
+  "author": "Tim Reynolds",
+  "license": "MIT",
+  "dependencies": {
+    "@types/react": "^16.9.41",
+    "react": "^16.13.1",
+    "typescript": "3.9.5"
+  },
+  "devDependencies": {
+    "@types/jest": "26.0.3",
+    "@types/node": "11.13.0",
+    "husky": "4.2.5",
+    "jest": "24.9.0",
+    "lint-staged": "10.2.11",
+    "prettier": "2.0.5",
+    "rimraf": "3.0.2",
+    "ts-jest": "24.3.0",
+    "ts-node": "8.10.2",
+    "tslint": "6.1.2",
+    "tslint-config-prettier": "1.18.0"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier --parser typescript --write",
+      "git add"
+    ]
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ]
+  }
+}
