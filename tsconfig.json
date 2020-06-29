@@ -15,9 +15,6 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "outDir": "./dist",
-    "types": [
-      "node", "jest"
-    ],
     "target": "esnext",
     "typeRoots": [
       "./types",
