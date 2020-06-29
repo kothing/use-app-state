@@ -1,5 +1,5 @@
 {
-  "name": "use-app-state",
+  "name": "@kothing/useAppState",
   "version": "1.0.0",
   "description": "useAppState based on react hook. that global version of setState() built on Context",
   "keywords": [
